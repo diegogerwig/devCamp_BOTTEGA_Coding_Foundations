@@ -6,8 +6,9 @@
 }
 
 body {
-    background-color: #131417;
+    background: linear-gradient(135deg, #646569 0%, #000000 100%);
     color: white;
+    min-height: 100vh;
 }
 
 .top-navbar {
@@ -93,27 +94,76 @@ body {
     cursor: pointer;
 }
 
+.main-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #666666 0%, #000000 100%);
+    z-index: -1;
+}
+
+.bottom-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: #000000;
+    z-index: -2;
+}
+
 .main-content {
+    position: relative;
     display: flex;
-    padding: 4rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: center;
+    padding: 40px 0 0 50px;
+    width: 100%;
+    margin: 0;
+    align-items: flex-start;
     gap: 2rem;
 }
 
+
+/* 
+.main-content {
+    display: flex;
+    padding: 40px 0 0 50px;
+    width: 100%;
+    margin: 0;
+    align-items: flex-start;
+    gap: 2rem;
+} */
+
 .left-section {
-    flex: 1;
+    flex: 1.0;
+    padding-right: 60px;
 }
 
 .right-section {
-    flex: 1;
+    flex: 1.0;
+    padding-left: 0px;
+    padding-right: 0px;
 }
+
+.project-title {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.highlight-cyan {
+    color: #76daff;
+}
+
+
 
 h1 {
     font-size: 2.8rem;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    font-weight: normal;
 }
 
 .highlight {
@@ -122,7 +172,7 @@ h1 {
 }
 
 .description {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-bottom: 2rem;
     color: #9b9dad;
     line-height: 1.6;
@@ -163,15 +213,16 @@ h1 {
 
 .bottom-section {
     display: flex;
-    border-top: 1px solid #2a2b30;
-    margin-top: 2rem;
+    background-color: #2a2b30;
+    border-top: 2px solid #666666;
+    border-bottom: 2px solid #666666;
 }
 
 .bottom-item {
     flex: 1;
     padding: 2rem;
     text-align: center;
-    border-right: 1px solid #2a2b30;
+    border-right: 2px solid #666666;
 }
 
 .bottom-item:last-child {
@@ -180,9 +231,26 @@ h1 {
 
 .bottom-item h3 {
     font-size: 1rem;
-    color: #fff;
+    color: #ffffff;
+    display: inline;
+    line-height: 1.5rem;
 }
 
-.bottom-item span {
+.bottom-item h3 span {
+    font-size: 1.5rem;
     font-weight: bold;
+    margin-left: 0.5rem;
+    vertical-align: baseline;
+}
+
+@media (max-width: 768px) {
+    .bottom-item h3 {
+        display: block;
+    }
+    
+    .bottom-item h3 span {
+        display: block;
+        margin-top: 0.5rem;
+        margin-left: 0;
+    }
 }
