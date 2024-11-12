@@ -24,14 +24,18 @@
 						<li><a href="#">Projects</a></li>
 						<li><a href="#">Posts</a></li>
 						<li><a href="#">Collections</a></li>
-						<li><a href="#">Spark ▼</a></li>
+						<li><a href="#">Spark</a></li>
 					</ul>
 				</div>
 			</div>
 			
 			<div class="right-nav">
-				<button class="create-btn">Create ▼</button>
-				<button class="search-icon">🔍</button>
+				<button class="create-btn">Create</button>
+				<button class="search-icon">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M14.2939 12.5786H13.3905L13.0703 12.2699C14.2297 10.9251 14.9434 9.20834 14.9434 7.34174C14.9434 3.28641 11.657 0 7.60174 0C3.54641 0 0.260009 3.28641 0.260009 7.34174C0.260009 11.3971 3.54641 14.6835 7.60174 14.6835C9.46834 14.6835 11.1851 13.9698 12.5299 12.8104L12.8386 13.1306V14.034L18.2603 19.4441L19.704 18.0004L14.2939 12.5786ZM7.60174 12.5786C4.70656 12.5786 2.36488 10.2369 2.36488 7.34174C2.36488 4.44656 4.70656 2.10488 7.60174 2.10488C10.4969 2.10488 12.8386 4.44656 12.8386 7.34174C12.8386 10.2369 10.4969 12.5786 7.60174 12.5786Z" fill="white"/>
+					</svg>
+				</button>
 				<button class="login-btn">Log In</button>
 				<button class="signup-btn">Sign Up</button>
 			</div>
@@ -72,6 +76,25 @@
 				<h3>CodePen for<span>WRITING</span></h3>
 			</div>
 		</div>
+
+	<script>
+	function adjustBottomBackground() {
+		const bottomSection = document.querySelector('.bottom-section');
+		const bottomBackground = document.querySelector('.bottom-background');
+		
+		if (bottomSection && bottomBackground) {
+			const rect = bottomSection.getBoundingClientRect();
+			bottomBackground.style.top = `${rect.top}px`;
+			bottomBackground.style.height = `${window.innerHeight - rect.top}px`;
+		}
+	}
+
+	window.addEventListener('load', adjustBottomBackground);
+
+	window.addEventListener('resize', adjustBottomBackground);
+
+	window.addEventListener('scroll', adjustBottomBackground);
+	</script>
 
 	</body>
 
